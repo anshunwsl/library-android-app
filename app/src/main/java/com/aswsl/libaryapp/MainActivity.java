@@ -3,8 +3,13 @@ package com.aswsl.libaryapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.alibaba.fastjson.JSONObject;
+import com.aswsl.common.core.JSONUtil;
+import com.aswsl.common.model.UserModel;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,6 +29,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         //
-
+        UserModel model=new UserModel();
+        //
+        //
+        model.setAddress("shenzhen");
+        model.setAge(100);
+        model.setUserName("wangsl");
+        //
+        Log.d(getClass().getSimpleName(), JSONUtil.toJSONString(model));
     }
 }
